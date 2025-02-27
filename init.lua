@@ -52,11 +52,13 @@ require('packer').startup(function(use)
    use 'wbthomason/packer.nvim'
    use 'projekt0n/github-nvim-theme'
    use 'nvim-tree/nvim-web-devicons'
+   use 'nvim-lua/plenary.nvim'
    use 'nvim-tree/nvim-tree.lua'
    use {'neoclide/coc.nvim', branch = 'release'}
    use 'github/copilot.vim'
    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
    use 'nvim-lualine/lualine.nvim'
+   use {'nvim-telescope/telescope.nvim', tag = '0.1.8'}
 end)
 
 -- Github Theme
@@ -84,4 +86,12 @@ require('lualine').setup({
   },
 })
 
-
+-- Telescope
+local telescope = require('telescope')
+telescope.setup{
+  defaults = {
+    file_ignore_patterns = {"node_modules", "dist", "build"}  -- Ignore specific folders
+  }
+}
+--vim.keymap.set('n', '<leader>f', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>f', ':Telescope find_files<CR>', {noremap = true, silent = true})
