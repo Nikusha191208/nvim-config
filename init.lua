@@ -47,6 +47,10 @@ vim.g.mapleader = ' '
 -- Moving Between Windows
 vim.keymap.set('n', '<leader>w', '<C-w>w', { noremap = true, silent = true })
 
+-- Screen Split
+vim.keymap.set('n', '<leader><F1>', '<C-w>v<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader><F2>', '<C-w>s<CR>', { noremap = true, silent = true })
+
 -- Plugins 
 require('packer').startup(function(use)
    use 'wbthomason/packer.nvim'
