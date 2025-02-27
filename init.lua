@@ -63,6 +63,7 @@ require('packer').startup(function(use)
    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
    use 'nvim-lualine/lualine.nvim'
    use {'nvim-telescope/telescope.nvim', tag = '0.1.8'}
+   use 'catgoose/nvim-colorizer.lua'
 end)
 
 -- Github Theme
@@ -99,3 +100,6 @@ telescope.setup{
 }
 --vim.keymap.set('n', '<leader>f', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>f', ':Telescope find_files<CR>', {noremap = true, silent = true})
+
+-- Colorizer
+require("colorizer").attach_to_buffer(0, { mode = "background", css = true })
