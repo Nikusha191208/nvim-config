@@ -64,6 +64,7 @@ require('packer').startup(function(use)
    use 'nvim-lualine/lualine.nvim'
    use {'nvim-telescope/telescope.nvim', tag = '0.1.8'}
    use 'catgoose/nvim-colorizer.lua'
+   use 'goolord/alpha-nvim'
 end)
 
 -- Github Theme
@@ -103,3 +104,8 @@ vim.keymap.set('n', '<leader>f', ':Telescope find_files<CR>', {noremap = true, s
 
 -- Colorizer
 require("colorizer").attach_to_buffer(0, { mode = "background", css = true })
+
+-- Alpha Nvim 
+local startify = require("alpha.themes.startify")
+startify.file_icons.provider = "devicons"
+require("alpha").setup(startify.config)
