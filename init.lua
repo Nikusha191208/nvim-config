@@ -19,9 +19,6 @@ vim.g.loaded_netrwPlugin = 1
 -- Activate Mouse
 vim.opt.mouse = 'a'
 
--- For Copy-Pase
-vim.opt.clipboard = "unnamedplus" 
-
 -- Mapping 
 vim.keymap.set('i', '(', '()<left>')
 vim.keymap.set('i', '{', '{}<left>')
@@ -109,3 +106,4 @@ require("colorizer").attach_to_buffer(0, { mode = "background", css = true })
 local startify = require("alpha.themes.startify")
 startify.file_icons.provider = "devicons"
 require("alpha").setup(startify.config)
+
