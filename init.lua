@@ -33,16 +33,16 @@ vim.keymap.set('i', '<h2>', '<h2></h2>')
 vim.keymap.set('i', '<h3>', '<h3></h3>')
 vim.keymap.set('i', '<h4>', '<h4></h4>')
 vim.keymap.set('i', '<h5>', '<h5></h5>')
-vim.keymap.set('i', '<header>', '<header></header>')
-vim.keymap.set('i', '<main>', '<main></main>')
-vim.keymap.set('i', '<footer>', '<footer></footer>')
-vim.keymap.set('i', '<div>', '<div></div>')
-vim.keymap.set('i', '<script>', '<script></div>')
-vim.keymap.set('i', '<img>', '<img src="">')
-vim.keymap.set('i', '<link>', '<link rel="stylesheet" href="">')
+vim.keymap.set('i', '<header>', '<header></header> <left><left><left><left><left><left><left><left><left>')
+vim.keymap.set('i', '<main>', '<main></main> <left><left><left><left><left><left><left>')
+vim.keymap.set('i', '<footer>', '<footer></footer> <left><left><left><left><left><left><left><left><left><left>')
+vim.keymap.set('i', '<div>', '<div></div> <left><left><left><left><left><left><left>') 
+vim.keymap.set('i', '<script>', '<script></script> <left><left><left><left><left><left><left><left><left><left>')
+vim.keymap.set('i', '<img>', '<img src=""> <left><left><left>')
+vim.keymap.set('i', '<link>', '<link rel="stylesheet" href=""><left><left>')
 
 -- Set Mapleader
-vim.g.mapleader = ' ' 
+vim.g.mapleader = ' '
 
 -- Moving Between Windows
 vim.keymap.set('n', '<leader>w', '<C-w>w', { noremap = true, silent = true })
