@@ -64,9 +64,6 @@ require('packer').startup(function(use)
    use 'goolord/alpha-nvim'
 end)
 
--- Github Theme
-vim.cmd('colorscheme github_dark_default')
-
 -- Nvim Tree
 require('nvim-tree').setup()
 vim.keymap.set('n', '<leader>t', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
@@ -107,3 +104,19 @@ local startify = require("alpha.themes.startify")
 startify.file_icons.provider = "devicons"
 require("alpha").setup(startify.config)
 
+-- Background Color 
+local bgTransparent = true
+
+function SetBackground()
+   if bgTransparent then 
+      bgTransparent = false
+      vim.o.background = "dark"
+      vim.cmd('colorscheme github_dark_default')
+   else
+      bgTransparent = true
+      vim.cmd [[highlight Normal guibg=NONE ctermbg=NONE]]
+      vim.cmd [[highlight NonText guibg=NONE ctermbg=NONE]]
+   end
+end
+
+vim.keymap.set('n', '<leader>b', SetBackground, { noremap = true, silent = true })
